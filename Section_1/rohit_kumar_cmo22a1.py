@@ -25,6 +25,7 @@ def bract_t(xc, f0, grad_f0):
     i = 0
     u = -grad_f0
     t = 1
+    e = 10 ** (-3)
 
     while i < maxIterations:
         f1, grad_f1 = calc(xc + t * u)
@@ -103,7 +104,8 @@ def q_4b():
     xk = x0
     xk_m = x0
     k = 1
-    counter = 1
+    counter = 0
+
     while (k == 1):
         xp = xk - gamma * grad_fk + etta * (xk - xk_m)
         fp, grad_fp = calc(xp)
